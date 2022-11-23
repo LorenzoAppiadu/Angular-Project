@@ -1,0 +1,18 @@
+<label for="">Hello What is your name</label>
+<br>
+<input type="text"
+class="form-control"
+ [(ngModel)] = "nameOfReader"
+> <br>
+<button class="btn btn-primary" 
+[disabled]="!allowNewServer" (click)="onRequest()">
+ Answer
+</button>
+<hr>
+<p *ngIf="display; else noName">{{message}}</p>
+<ng-template #noName>
+    <p>I don't know your name yet</p>
+</ng-template>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<app-server *ngFor="let friend of friends"></app-server>
+
